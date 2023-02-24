@@ -1,0 +1,11 @@
+<main class="container">
+  <h2>Please, provide your info:</h2>
+
+  <section class="content">
+    <app-create (insertPerson)="insertPerson($event)"></app-create>
+    <app-list
+      [peopleList]="peopleList"
+      (onDeletePerson)="deletePerson($event)"
+    ></app-list>
+  </section>
+</main>

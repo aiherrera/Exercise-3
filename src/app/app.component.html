@@ -1,0 +1,25 @@
+<mat-toolbar class="toolbar">
+  <div class="home" routerLink="/">People Management</div>
+
+  <button
+    mat-icon-button
+    matTooltip="Send information"
+    aria-label="Send information"
+    *ngIf="!isChecking"
+    (click)="sendData()"
+  >
+    <mat-icon>send</mat-icon>
+  </button>
+
+  <button
+    mat-icon-button
+    matTooltip="Back to main page"
+    aria-label="Back to main page"
+    *ngIf="isChecking"
+    routerLink="/"
+  >
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

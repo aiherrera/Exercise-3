@@ -1,0 +1,10 @@
+<div mat-dialog-content>
+  <p>Minimal age of access?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Age</mat-label>
+    <input matInput type="number" [(ngModel)]="data.age" />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data.age" cdkFocusInitial>Ok</button>
+</div>

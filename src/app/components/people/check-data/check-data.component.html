@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Minimun selected age: {{ age }}</h1>
+
+  <main class="content">
+    <section>
+      <h2>People that has the minimun age</h2>
+
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let person of peopleOverAge">
+          <p>{{ person.name }} {{ person.lastname }} - {{ person.location }}</p>
+        </mat-list-item>
+      </mat-list>
+    </section>
+
+    <section>
+      <h2>People that hasn't the minimun age</h2>
+
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let person of peopleUnderAge">
+          <p>{{ person.name }} {{ person.lastname }} - {{ person.location }}</p>
+        </mat-list-item>
+      </mat-list>
+    </section>
+  </main>
+</div>

@@ -1,0 +1,86 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form card">
+  <div class="form-item">
+    <label for="name">Name:</label>
+    <input type="text" name="name" formControlName="name" />
+  </div>
+
+  <div class="form-item">
+    <label for="name">Last name:</label>
+    <input type="text" name="lastname" formControlName="lastname" />
+  </div>
+
+  <div class="form-item">
+    <label for="name">Age:</label>
+    <input type="number" name="age" max="99" min="16" formControlName="age" />
+  </div>
+
+  <div class="form-item">
+    <label for="name">Location:</label>
+    <input type="text" name="location" formControlName="location" />
+  </div>
+
+  <div class="errors">
+    <mat-error
+      *ngIf="
+        registerForm.get('name')?.touched &&
+        registerForm.get('name')?.hasError('required')
+      "
+    >
+      Name is <strong>required</strong>
+    </mat-error>
+    <mat-error
+      *ngIf="
+        registerForm.get('lastname')?.touched &&
+        registerForm.get('lastname')?.hasError('required')
+      "
+    >
+      Lastname is <strong>required</strong>
+    </mat-error>
+    <mat-error
+      *ngIf="
+        registerForm.get('age')?.touched &&
+        registerForm.get('age')?.hasError('required')
+      "
+    >
+      Age is <strong>required</strong>
+    </mat-error>
+    <mat-error
+      *ngIf="
+        (registerForm.get('age')?.touched &&
+          registerForm.get('age')?.hasError('min')) ||
+        registerForm.get('age')?.hasError('max')
+      "
+    >
+      The age must be between <strong>16</strong> and <strong>99</strong> years
+      old
+    </mat-error>
+    <mat-error
+      *ngIf="
+        registerForm.get('location')?.touched &&
+        registerForm.get('location')?.hasError('required')
+      "
+    >
+      Location is <strong>required</strong>
+    </mat-error>
+  </div>
+
+  <div class="btn-actions">
+    <button
+      mat-raised-button
+      type="submit"
+      [disabled]="!registerForm.valid"
+      color="primary"
+      aria-label="Insert data"
+    >
+      Insert data
+    </button>
+    <button
+      mat-stroked-button
+      type="reset"
+      color="accent"
+      aria-label="Clear data"
+    >
+      Clear data
+    </button>
+  </div>
+</form>

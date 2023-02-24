@@ -1,0 +1,55 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  row-gap: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.form:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.messages span.attention {
+  font-size: 11px;
+  color: rgb(235, 127, 127);
+}
+
+.messages span.info {
+  font-size: 11px;
+  color: rgb(102, 158, 102);
+}
+
+.form-item {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.form-item input {
+  height: 25px;
+  width: 70%;
+}
+
+.btn-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  max-width: 300px;
+  padding-top: 20px;
+  border-top: 1px solid #eceaea;
+}
+
+.errors {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px;
+}
